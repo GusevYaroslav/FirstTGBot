@@ -18,7 +18,7 @@ async def send_welcome(message: types.Message):
 
 @dp.message_handler()
 async def echo(message: types.Message):
-    await message.answer(message.text.title())
+    await message.answer(message.text.upper())
 
 
 if __name__ == '__main__':
