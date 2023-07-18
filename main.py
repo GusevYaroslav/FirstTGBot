@@ -24,11 +24,21 @@ async def send_welcome(message: types.Message):
 async def send_welcome(message: types.Message):
     await message.reply("Bot's description")
 
-
+'''
 @dp.message_handler()
 async def echo(message: types.Message):
     symb_num = random.randint(0, len(alf) - 1)
     await message.answer(alf[symb_num])
+'''
+
+@dp.message_handler()
+async def echo(message: types.Message):
+    if message.text == '0' or message.text == 0:
+        await message.answer('Yes')
+
+    else:
+        await message.answer('No')
+
 
 
 if __name__ == '__main__':
